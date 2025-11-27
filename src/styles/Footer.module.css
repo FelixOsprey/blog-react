@@ -1,0 +1,36 @@
+.footer {
+  margin-top: 50px;
+  padding: 40px 40px;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #000; /* clean line at the top */
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socials a {
+  color: #000;
+  font-size: 24px;
+  transition: 0.2s ease;
+}
+
+.socials a:hover {
+  color: #666;
+}
+
+.left p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}

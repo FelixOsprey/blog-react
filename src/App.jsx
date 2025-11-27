@@ -1,5 +1,9 @@
 import { useRoutes } from "react-router";
 import "./App.css";
+import Blog from "./pages/Blog";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 function App() {
   // Define page routes with react-router.
@@ -8,6 +12,8 @@ function App() {
     { path: "/", element: <Blog /> },
     // Route for the contact page
     { path: "/contact", element: <Contact /> },
+    // Route for enkeltvisning
+    // { path: "/post/:id", element: <SinglePost /> },
   ]);
 
   return (
