@@ -7,7 +7,7 @@ const Blog = () => {
   const [books, setBooks] = useState([]);
 
   const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=fiction";
-  const apiKey = "AIzaSyDqF3LU7wo913WzqXZ_KKvgIJXsW46fw6k";
+  const apiKey = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
   const fetchBooks = async () => {
     try {
