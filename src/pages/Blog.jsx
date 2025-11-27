@@ -1,41 +1,29 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import BlogPost from "./../components/BlogPost";
 import styles from "../styles/Blog.module.css";
 
 const Blog = () => {
   const [books, setBooks] = useState([]);
 
-  const apiUrl =
-    "https://www.googleapis.com/books/v1/volumes?q=react+programming"; // Correct API URL for Google Books
-  const apiKey = "AIzaSyDqF3LU7wo913WzqXZ_KKvgIJXsW46fw6k"; // Your API Key
+  const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=fiction";
+  const apiKey = "AIzaSyDqF3LU7wo913WzqXZ_KKvgIJXsW46fw6k";
 
   const fetchBooks = async () => {
     try {
-      // Corrected fetch request
-      const response = await fetch(`${apiUrl}&key=${apiKey}`); // Append API key in the URL
-      console.log(response);
+      const response = await fetch(`${apiUrl}&key=${apiKey}`);
+      if (!response.ok) throw new Error("Failed to fetch");
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-
-      const data = await response.json(); // Parse the JSON <fresponse
-      console.log(data);
-
-      // Assuming the data has an "items" array that contains the  ooks
-      setBooks(data.items); // Set books in state
-
-      const book = books.filter((book) => book.id === "CSj5DwAAQBAJ");
-      console.log(book);
+      const data = await response.json();
+      setBooks(data.items);
     } catch (error) {
-      console.log(error); // Log any errors
+      console.log(error);
     }
   };
 
-  // Indbygget hook fra React der sørger for, at funktionen kun køre én gang når komponenten renderes/mountes.
   useEffect(() => {
-    fetchBooks(); // Call fetchBooks when the component mounts
-  }, []); // Empty dependency array to call it only once when the component mounts
+    fetchBooks();
+  }, []);
 
   return (
     <article className={styles.container}>
@@ -43,6 +31,12 @@ const Blog = () => {
       <section className={styles.left}>
         <h1>Blog Posts</h1>
         <BlogPost />
+        <Link
+          to={`/blog/${books[0]?.id || "default"}`}
+          className={styles.readButton}
+        >
+          Læs indlæg
+        </Link>
       </section>
 
       {/* RIGHT SIDE */}

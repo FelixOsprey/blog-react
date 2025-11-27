@@ -4,6 +4,7 @@ import Blog from "./pages/Blog";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import SinglePost from "./pages/SinglePost";
 
 function App() {
   // Define page routes with react-router.
@@ -13,7 +14,7 @@ function App() {
     // Route for the contact page
     { path: "/contact", element: <Contact /> },
     // Route for enkeltvisning
-    // { path: "/post/:id", element: <SinglePost /> },
+    { path: "/blog/:id", element: <SinglePost /> },
   ]);
 
   return (
