@@ -1,10 +1,11 @@
 import { useState } from "react";
+import styles from "../styles/BlogPost.module.css";
 
 const BlogPost = ({ blog }) => {
   // Return = Enter HTML
   return (
-    <article>
-      <p>
+    <article className={styles.article}>
+      <p className={styles.p}>
         Alle har jo hemmeligheder Det ligemeget hvilket alder du er hvem du er
         eller hvilket tidspunkt du er i livet, vi har alle et hemmelighed eller
         to vi gemmer skjult bag lukket døre, jeg glæder mig til at introducere

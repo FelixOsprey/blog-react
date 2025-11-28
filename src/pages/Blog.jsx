@@ -27,7 +27,6 @@ const Blog = () => {
 
   return (
     <article className={styles.container}>
-      {/* LEFT SIDE */}
       <section className={styles.left}>
         <h1>Blog Posts</h1>
         <BlogPost />
@@ -39,7 +38,6 @@ const Blog = () => {
         </Link>
       </section>
 
-      {/* RIGHT SIDE */}
       <section className={styles.right}>
         <h1>Featured Book</h1>
         {books.length > 0 ? (

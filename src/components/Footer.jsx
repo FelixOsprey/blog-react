@@ -1,11 +1,12 @@
 import styles from "../styles/Footer.module.css";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import Logo from "../assets/booklogo.svg";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.left}>
-        <h2 className={styles.logo}>LOGO</h2>
+        <img className={styles.logo} src={Logo} alt="Logo" />
         <p>© {new Date().getFullYear()} All rights reserved</p>
       </div>
 

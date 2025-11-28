@@ -1,0 +1,12 @@
+.p {
+  max-width: 500px;
+  text-align: justify;
+  hyphens: auto;
+
+  margin: 0 auto;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+}
